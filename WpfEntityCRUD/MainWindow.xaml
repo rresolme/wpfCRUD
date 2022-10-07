@@ -7,22 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="600">
     <DockPanel>
-        <DataGrid x:Name="myDataGrid" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*" >
+        <DataGrid x:Name="myDataGrid" x:FieldModifier="public" AutoGenerateColumns="False" ColumnWidth="*" CanUserAddRows="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding id}" />
-                <DataGridTextColumn Header="Name" Binding="{Binding name}" />
-                <DataGridTextColumn Header="Age Group" Binding="{Binding ageGroup}" />
-                <DataGridTemplateColumn>
+                <DataGridTextColumn Header="Id" Binding="{Binding id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Name" Binding="{Binding name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Age Group" Binding="{Binding ageGroup}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Width="96">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <Button x:Name="insertBtn" Content="Add new citizen" Click="insertBtn_Click" />
+                            <Button x:Name="insertBtn" Content="Add new entry" Click="insertBtn_Click" />
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button x:Name="updateBtn" Content="Update" Click="updateBtn_Click" />
-                                <Button x:Name="deleteBtn" Content="Delete" Click="deleteBtn_Click"  />
+                                <Button x:Name="updateBtn" Content=" Update " Click="updateBtn_Click" />
+                                <Button x:Name="deleteBtn" Content=" Delete " Click="deleteBtn_Click"  />
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
